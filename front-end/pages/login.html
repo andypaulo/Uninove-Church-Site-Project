@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça seu Login</title>
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+    <div class="ger">
+        <div class="loginWrapper">
+            <div class="header">
+                <div class="logo">
+                        <img src="../assets/img/logoIIGD.png" alt="Logo Igreja Internacional da Graça de Deus">
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="tabsList">
+                    <button class="tabTrigger active" id="loginTab" onclick="JavaScript:selectTab('login')">Entrar</button>
+                    <button class="tabTrigger" id="registerTab" onclick="JavaScript:selectTab('register')">Cadastrar</button>
+                </div>
+                <div class="tabContent active" id="loginContent">
+                    <div class="card">
+                        <div class="cardHeader">
+                            <h2 class="cardTitle">Entrar na sua Conta</h2>
+                        </div>
+                        <div class="cardContent">
+                            <form id="loginForm" class="form">
+                                <div class="formField">
+                                    <label for="email" class="label">E-mail</label>
+                                    <div class="inputWrapper">
+                                        <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                            <path d="m22 7-10 5L2 7"/>
+                                        </svg>
+                                        <input type="email" id="email" class="input" placeholder="seu@email.com" required>
+                                    </div>
+                                </div>
+                                <div class="formField">
+                                    <label for="password" class="label">Senha</label>
+                                    <div class="inputWrapper">
+                                        <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                                            <path d="m7 11V7a5 5 0 0 1 10 0v4"/>
+                                        </svg>
+                                        <input type="password" id="password" class="input" placeholder="Sua senha" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="button buttonPrayer">Entrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabContent" id="registerContent">
+                    <div class="card">
+                        <div class="cardHeader">
+                            <h2 class="cardTitle">Cadastre-se</h2>
+                        </div>
+                        <div class="cardContent">
+                            <form id="registerForm" class="form">
+                                <div class="formRow">
+                                    <div class="formField">
+                                        <label for="firstName" class="label">Nome</label>
+                                        <div class="inputWrapper">
+                                            <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                                <circle cx="12" cy="7" r="4"/>
+                                            </svg>
+                                            <input type="text" id="firstName" class="input" placeholder="Nome" required>
+                                        </div>
+                                    </div>
+                                    <div class="formField">
+                                        <label for="lastName" class="label">Sobrenome</label>
+                                        <input type="text" id="lastName" class="input" placeholder="Sobrenome" required>
+                                    </div>
+                                </div>
+
+                                <div class="formField">
+                                    <label for="registerEmail" class="label">E-mail</label>
+                                    <div class="inputWrapper">
+                                        <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                            <path d="m22 7-10 5L2 7"/>
+                                        </svg>
+                                        <input type="email" id="registerEmail" class="input" placeholder="seu@email.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="formField">
+                                    <label for="registerPassword" class="label">Senha</label>
+                                    <div class="inputWrapper">
+                                        <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                                            <path d="m7 11V7a5 5 0 0 1 10 0v4"/>
+                                        </svg>
+                                        <input type="password" id="registerPassword" class="input" placeholder="Sua senha" required>
+                                    </div>
+                                </div>
+
+                                <div class="formField">
+                                    <label for="confirmPassword" class="label">Confirmar Senha</label>
+                                    <div class="inputWrapper">
+                                        <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                                            <path d="m7 11V7a5 5 0 0 1 10 0v4"/>
+                                        </svg>
+                                        <input type="password" id="confirmPassword" class="input" placeholder="Confirme sua senha" required>
+                                    </div>
+                                </div>
+
+                                <div class="formRow">
+                                    <div class="formField">
+                                        <label for="birthDate" class="label">Data de Nascimento</label>
+                                        <div class="inputWrapper">
+                                            <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M8 2v4"/>
+                                                <path d="M16 2v4"/>
+                                                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                                                <path d="M3 10h18"/>
+                                            </svg>
+                                            <input type="date" id="birthDate" class="input" required>
+                                        </div>
+                                    </div>
+                                    <div class="formField">
+                                        <label for="phone" class="label">Telefone</label>
+                                        <div class="inputWrapper">
+                                            <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                            </svg>
+                                            <input type="tel" id="phone" class="input" placeholder="(11) 99999-9999" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="formField">
+                                    <label for="address" class="label">Endereço</label>
+                                    <div class="inputWrapper">
+                                        <svg class="inputIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                        <input type="text" id="address" class="input" placeholder="Seu endereço completo" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="button buttonPrayer">Cadastrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="backLink">
+                <a href="#" class="link">Voltar ao início</a>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/login.js"></script>
+</body>
+</html>

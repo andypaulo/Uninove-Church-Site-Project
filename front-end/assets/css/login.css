@@ -1,0 +1,256 @@
+:root {
+  --background: 0 0% 100%;
+  --foreground: 215 25% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 25% 15%;
+  --muted: 220 20% 96%;
+  --muted-foreground: 215 15% 50%;
+  --border: 220 20% 92%;
+  --input: 220 20% 96%;
+
+  --divine-blue: 235 70% 55%;
+  --divine-blue-light: 240 80% 70%;
+  --divine-gold: 45 90% 65%;
+  --divine-gold-light: 45 100% 88%;
+  --heavenly-white: 0 0% 100%;
+  --peaceful-gray: 220 20% 96%;
+
+  --gradient-divine: linear-gradient(135deg, hsl(var(--divine-blue)), hsl(var(--divine-blue-light)));
+  --gradient-golden: linear-gradient(135deg, hsl(var(--divine-gold)), hsl(var(--divine-gold-light)));
+  --gradient-heavenly: linear-gradient(180deg, hsl(var(--heavenly-white)), hsl(var(--peaceful-gray)));
+
+  --shadow-divine: 0 10px 30px -10px hsl(var(--divine-blue) / 0.3);
+  --shadow-golden: 0 5px 20px -5px hsl(var(--divine-gold) / 0.4);
+  --shadow-soft: 0 4px 20px -4px hsl(215 25% 15% / 0.1);
+
+  --radius: 0.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--gradient-heavenly);
+  color: hsl(var(--foreground));
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.loginWrapper {
+  width: 100%;
+  max-width: 28rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.logo img {
+  width: 250px;
+  height: 150px;
+}
+
+.tabs {
+  width: 100%;
+}
+
+.tabsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  background: hsl(var(--muted));
+  border-radius: var(--radius);
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.tabTrigger {
+  border: none;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: calc(var(--radius) - 0.125rem);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: hsl(var(--muted-foreground));
+}
+
+.tabTrigger.active {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  box-shadow: var(--shadow-soft);
+}
+
+.tabTrigger:hover:not(.active) {
+  color: hsl(var(--foreground));
+}
+
+.tabContent {
+  display: none;
+}
+
+.tabContent.active {
+  display: block;
+}
+
+.card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.cardHeader {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: hsl(var(--card-foreground));
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: hsl(var(--muted-foreground));
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  padding-left: 2.5rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: hsl(var(--divine-blue));
+  box-shadow: 0 0 0 2px hsl(var(--divine-blue) / 0.2);
+}
+
+.input::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.buttonPrayer {
+  background: var(--gradient-divine);
+  color: white;
+  box-shadow: var(--shadow-divine);
+}
+
+.buttonPrayer:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 15px 35px -10px hsl(var(--divine-blue) / 0.4);
+}
+
+.buttonPrayer:active {
+  transform: translateY(0);
+}
+
+.backLink {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.link {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: hsl(var(--divine-blue));
+}
+
+@media (max-width: 640px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .loginContainer {
+    padding: 0.5rem;
+  }
+  
+  .logo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
